@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'store', 'update'])
     ->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
@@ -40,4 +40,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

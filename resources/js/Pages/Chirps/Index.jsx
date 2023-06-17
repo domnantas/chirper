@@ -1,11 +1,10 @@
-import React from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Head, useForm } from "@inertiajs/react";
 import InputError from "@/Components/InputError";
 import PrimaryButton from "@/Components/PrimaryButton";
 import Chirp from "@/Components/Chirp";
 
-export default ({ auth, chirps }) => {
+export default function Chirps({ auth, chirps }) {
 	const { data, setData, post, processing, reset, errors } = useForm({
 		message: "",
 	});
@@ -45,4 +44,4 @@ export default ({ auth, chirps }) => {
 			</div>
 		</Authenticated>
 	);
-};
+}
